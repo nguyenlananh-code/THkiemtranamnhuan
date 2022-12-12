@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> thực hành kiểm tra năm nhuận</title>
+</head>
+<body>
+<button onclick="year"> Enter a year </button>
+<p id="isLeapYear"></p>
+</body>
+<script>
+    let year = parseInt(prompt("Enter a year"));
+    let isLeapYear = false;
+    let isDivisibleBy4 = year % 4 == 0;
+     if (isDivisibleBy4) {
+         let isDivisibleBy100 = year % 100 == 0;
+         if (isDivisibleBy100){
+             let isDivisibleBy400 = year % 400 == 0;
+             if (isDivisibleBy400) {
+                 isLeapYear =true;
+             }
+             
+         }else{
+             isLeapYear = true;
+         }
+     }
+if (isLeapYear){
+    alert(year + " is a leap year");
+}else {
+    alert(year + " is Not a leap year");
+}
+</script>
+
+
+</html>
